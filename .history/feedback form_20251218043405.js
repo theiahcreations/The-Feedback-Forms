@@ -130,16 +130,16 @@ function createIAHFeedbackForm() {
       .setHelpText("If representing a business or organization");
 
     // Project Timeline
-    var timelineItem = form.addMultipleChoiceItem();
-    timelineItem
+    form
+      .addMultipleChoiceItem()
       .setTitle("Expected Project Timeline")
       .setChoices([
-        timelineItem.createChoice("ASAP (Rush - Additional fees may apply)"),
-        timelineItem.createChoice("Within 1-2 weeks"),
-        timelineItem.createChoice("Within 1 month"),
-        timelineItem.createChoice("2-3 months"),
-        timelineItem.createChoice("Flexible timeline"),
-        timelineItem.createChoice("Just exploring options"),
+        form.createChoice("ASAP (Rush - Additional fees may apply)"),
+        form.createChoice("Within 1-2 weeks"),
+        form.createChoice("Within 1 month"),
+        form.createChoice("2-3 months"),
+        form.createChoice("Flexible timeline"),
+        form.createChoice("Just exploring options"),
       ])
       .setRequired(true);
 
@@ -147,73 +147,67 @@ function createIAHFeedbackForm() {
     form.addPageBreakItem().setTitle("Service Selection");
 
     // Main Category Selection
-    var serviceCategory = form.addCheckboxItem();
-    serviceCategory
+    var serviceCategory = form
+      .addCheckboxItem()
       .setTitle("Which services are you interested in?")
       .setChoices([
-        serviceCategory.createChoice("1. Website Creations (SPW / Multi-Page)"),
-        serviceCategory.createChoice(
-          "2. Web App Creations (SPA / Multi-Tasking)"
-        ),
-        serviceCategory.createChoice(
-          "3. Mobile Application Creations (Android / iOS)"
-        ),
-        serviceCategory.createChoice("Other / General Consultation"),
+        form.createChoice("1. Website Creations (SPW / Multi-Page)"),
+        form.createChoice("2. Web App Creations (SPA / Multi-Tasking)"),
+        form.createChoice("3. Mobile Application Creations (Android / iOS)"),
+        form.createChoice("Other / General Consultation"),
       ])
       .setRequired(true);
 
     // Specific Project Type (Derived from Brochure Sub-sections 1.1, 1.2, 2.1, 2.2, etc.)
-    var projectType = form.addListItem();
-    projectType
+    var projectType = form
+      .addListItem()
       .setTitle("Select your specific project type (if known):")
       .setChoices([
-        projectType.createChoice(
+        form.createChoice(
           "1.1 Single Page Website (Portfolio, Resume, Landing Page)"
         ),
-        projectType.createChoice(
+        form.createChoice(
           "1.2 Dynamic Multi-Page Website (Corporate, E-commerce, CMS)"
         ),
-        projectType.createChoice(
+        form.createChoice(
           "2.1 Single Page Web App (Calculator, Dashboard, To-Do)"
         ),
-        projectType.createChoice(
-          "2.2 Multi-Tasking Dynamic App (SaaS, CRM, ERP)"
-        ),
-        projectType.createChoice("3.1 Mobile SPA (Info Display, Utility Tool)"),
-        projectType.createChoice(
+        form.createChoice("2.2 Multi-Tasking Dynamic App (SaaS, CRM, ERP)"),
+        form.createChoice("3.1 Mobile SPA (Info Display, Utility Tool)"),
+        form.createChoice(
           "3.2 Dynamic Mobile App (Native/Hybrid, Flutter/React Native)"
         ),
-        projectType.createChoice("Not sure yet / Need guidance"),
+        form.createChoice("Not sure yet / Need guidance"),
       ]);
 
     // --- SECTION 3: PROJECT TIER & BUDGET (Based on Pricing Tables) ---
     form.addSectionHeaderItem().setTitle("Project Scope & Budget");
 
     // Tiers mentioned in the brochure
-    var tierItem = form.addMultipleChoiceItem();
-    tierItem
+    form
+      .addMultipleChoiceItem()
       .setTitle("Preferred Package Tier")
       .setHelpText(
         "Refer to our brochure for detailed feature breakdowns per tier."
       )
       .setChoices([
-        tierItem.createChoice("Basic (MVP / Starter features)"),
-        tierItem.createChoice("Medium (Standard features + Integrations)"),
-        tierItem.createChoice("Advance (Full Scale / AI / High Scalability)"),
-        tierItem.createChoice("Custom Quote Needed"),
+        form.createChoice("Basic (MVP / Starter features)"),
+        form.createChoice("Medium (Standard features + Integrations)"),
+        form.createChoice("Advance (Full Scale / AI / High Scalability)"),
+        form.createChoice("Custom Quote Needed"),
       ]);
 
     // Budget Range
-    var budgetItem = form.addMultipleChoiceItem();
-    budgetItem
+    form
+      .addMultipleChoiceItem()
       .setTitle("Estimated Budget Range (USD)")
       .setHelpText("This helps us recommend the most suitable package")
       .setChoices([
-        budgetItem.createChoice("$500 - $2,000 (Basic)"),
-        budgetItem.createChoice("$2,000 - $5,000 (Standard)"),
-        budgetItem.createChoice("$5,000 - $15,000 (Premium)"),
-        budgetItem.createChoice("$15,000+ (Enterprise)"),
-        budgetItem.createChoice("Need consultation for pricing"),
+        form.createChoice("$500 - $2,000 (Basic)"),
+        form.createChoice("$2,000 - $5,000 (Standard)"),
+        form.createChoice("$5,000 - $15,000 (Premium)"),
+        form.createChoice("$15,000+ (Enterprise)"),
+        form.createChoice("Need consultation for pricing"),
       ])
       .setRequired(true);
 
@@ -241,17 +235,17 @@ function createIAHFeedbackForm() {
       .setLabels("Not Familiar", "Very Familiar");
 
     // Lead Source Tracking
-    var sourceItem = form.addMultipleChoiceItem();
-    sourceItem
+    form
+      .addMultipleChoiceItem()
       .setTitle("How did you hear about us?")
       .setChoices([
-        sourceItem.createChoice("Google Search"),
-        sourceItem.createChoice("Social Media (LinkedIn, Instagram, etc.)"),
-        sourceItem.createChoice("Referral from friend/colleague"),
-        sourceItem.createChoice("Previous client"),
-        sourceItem.createChoice("Online advertisement"),
-        sourceItem.createChoice("Business networking event"),
-        sourceItem.createChoice("Other"),
+        form.createChoice("Google Search"),
+        form.createChoice("Social Media (LinkedIn, Instagram, etc.)"),
+        form.createChoice("Referral from friend/colleague"),
+        form.createChoice("Previous client"),
+        form.createChoice("Online advertisement"),
+        form.createChoice("Business networking event"),
+        form.createChoice("Other"),
       ]);
 
     form
@@ -260,19 +254,13 @@ function createIAHFeedbackForm() {
       .setHelpText("Any other information you'd like to share?");
 
     // Marketing Consent
-    var consentItem = form.addCheckboxItem();
-    consentItem
+    form
+      .addCheckboxItem()
       .setTitle("Communication Preferences")
       .setChoices([
-        consentItem.createChoice(
-          "I agree to receive project updates via email"
-        ),
-        consentItem.createChoice(
-          "I'd like to receive newsletters about new services"
-        ),
-        consentItem.createChoice(
-          "I consent to follow-up calls regarding my inquiry"
-        ),
+        form.createChoice("I agree to receive project updates via email"),
+        form.createChoice("I'd like to receive newsletters about new services"),
+        form.createChoice("I consent to follow-up calls regarding my inquiry"),
       ]);
 
     // 3. Setup Spreadsheet with Enhanced Structure
