@@ -117,7 +117,7 @@ function createIAHFeedbackForm() {
       .setHelpText("Include country code (e.g., +1 555-123-4567)")
       .setValidation(
         FormApp.createTextValidation()
-          .requireTextMatchesPattern("^[+]?[0-9s-()]{10,}$")
+          .requireTextMatchesPattern("^[+]?[0-9\\s()-]{10,}$")
           .setHelpText("Please enter a valid phone number")
           .build()
       )
