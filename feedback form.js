@@ -218,7 +218,7 @@ function createIAHFeedbackForm() {
       .setRequired(true);
 
     form
-      .addParagraphItem()
+      .addParagraphTextItem()
       .setTitle("Detailed Project Requirements")
       .setHelpText(
         "Please describe your project in detail. Include:\n" +
@@ -255,7 +255,7 @@ function createIAHFeedbackForm() {
       ]);
 
     form
-      .addParagraphItem()
+      .addParagraphTextItem()
       .setTitle("Additional Questions or Comments")
       .setHelpText("Any other information you'd like to share?");
 
